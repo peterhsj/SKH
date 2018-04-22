@@ -1005,7 +1005,7 @@ body.site-gridmenu-active {
 
 .page-header {
   position: relative;
-  padding: 30px;
+  padding: 15px 30px;
   margin-top: 0;
   margin-bottom: 0;
   background: transparent;
@@ -1036,7 +1036,8 @@ body.site-gridmenu-active {
 }
 
 .page-header .breadcrumb {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
   padding: 10px 0 0 0;
   margin: 0;
 }

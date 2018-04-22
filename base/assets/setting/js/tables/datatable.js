@@ -90,7 +90,17 @@
         "buttons": ['copy', 'excel', 'csv', 'pdf', 'print']
       });
 
-      (0, _jquery2.default)('#exampleTableTools').dataTable(options);
+      (0, _jquery2.default)('#exampleTableTools').dataTable({
+        targets: 'no-sort',
+        orderable: false,
+        columnDefs: [{
+          orderable: !1,
+          targets: [0]
+        }, {
+          searchable: !1,
+          targets: [0]
+        }],
+      });
     });
   })();
 
@@ -100,6 +110,8 @@
     var EditableTable = {
 
       options: {
+        targets: 'no-sort',
+        orderable: false,
         addButton: '#addToTable',
         table: '#exampleAddRow',
         dialog: {

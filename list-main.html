@@ -35,15 +35,21 @@
         <link rel="stylesheet" href="global/vendor/datatables.net-responsive-bs4/dataTables.responsive.bootstrap4.css">
         <link rel="stylesheet" href="global/vendor/datatables.net-buttons-bs4/dataTables.buttons.bootstrap4.css">
         <link rel="stylesheet" href="base/assets/setting/css/tables/datatable.css">
+        
+        <!-- fileupload -->
+        <link rel="stylesheet" href="global/vendor/blueimp-file-upload/jquery.fileupload.css">
+        <link rel="stylesheet" href="global/vendor/dropify/dropify.css">
 
-        <!-- Form layouts-->
+        <!-- Form layouts -->
         <link rel="stylesheet" href="base/assets/setting/css/forms/layouts.css">
 
-        <!-- datepicker layouts-->
+        <!-- datepicker layouts -->
         <link rel="stylesheet" href="global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
 
-
         <link rel="stylesheet" href="global/vendor/bootstrap-select/bootstrap-select.css">
+
+        <!-- toastr -->
+        <link rel="stylesheet" href="global/vendor/toastr/toastr.css">
     
     
     <!-- Fonts --><link rel="stylesheet" href="global/fonts/font-awesome/font-awesome.css">
@@ -275,7 +281,6 @@
     <!-- Page -->
     <div class="page">
       <div class="page-header">
-        <h1 class="page-title">單元子項目範例A</h1>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
           <li class="breadcrumb-item active">員工作業</li>
@@ -305,11 +310,11 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">性別: </label>
                                     <div class="col-md-9">
-                                        <div class="radio-custom radio-default radio-inline">
+                                        <div class="radio-custom radio-primary radio-inline">
                                             <input type="radio" id="inputHorizontalMale" name="inputRadiosMale2" />
                                             <label for="inputHorizontalMale">男</label>
                                         </div>
-                                        <div class="radio-custom radio-default radio-inline">
+                                        <div class="radio-custom radio-primary radio-inline">
                                             <input type="radio" id="inputHorizontalFemale" name="inputRadiosMale2" />
                                             <label for="inputHorizontalFemale">女</label>
                                         </div>
@@ -341,6 +346,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">檔案上傳: </label>
+                                    <div class="col-md-9">
+                                        <input type="file" id="input-file-now" data-plugin="dropify" data-default-file="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-md-3 col-form-label">備註: </label>
                                     <div class="col-md-9">
                                         <textarea class="form-control" placeholder=""></textarea>
@@ -359,6 +370,23 @@
                                     <label class="col-md-3 col-form-label">醫師英文文姓名: </label>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" name="name" placeholder="姓名" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">複選項目: </label>
+                                    <div class="col-md-9">
+                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                            <input type="checkbox" id="checked-1">
+                                            <label for="checked-1">項目1</label>
+                                        </div>
+                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                            <input type="checkbox" id="checked-2">
+                                            <label for="checked-2">項目2</label>
+                                        </div>
+                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                            <input type="checkbox" id="checked-3">
+                                            <label for="checked-3">項目3</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -411,6 +439,51 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">訊息提示: </label>
+                                    <div class="col-md-9">
+                                        <a class="btn btn-info" id="exampleTopCenter" data-plugin="toastr" data-type="info" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">訊息</a>
+                                        <a class="btn btn-success" id="exampleTopCenter" data-plugin="toastr" data-type="success" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                            成功</a>
+                                        <a class="btn btn-danger" id="exampleTopCenter" data-plugin="toastr" data-type="error" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                            錯誤</a>
+                                        <a class="btn btn-warning" id="exampleTopCenter" data-plugin="toastr" data-type="warning" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                            警告</a>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">POP Modal: </label>
+                                    <div class="col-md-9">
+                                        <button type="button" class="btn btn-raised btn-primary" data-target="#exampleModalPrimary" data-toggle="modal">Pop 訊息視窗</button>
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade modal-primary" id="exampleModalPrimary" aria-hidden="true" aria-labelledby="exampleModalPrimary" role="dialog"
+                                        tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                    <h4 class="modal-title">Pop 訊息視窗</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>One fine body…</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                    <button type="button" class="btn btn-primary">確認</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal -->
+                                </div>
                             </form>
                         </div>
                         <!-- End Example Horizontal Form -->
@@ -433,6 +506,12 @@
                 <table class="table table-hover table-bordered dataTable table-striped w-full" id="exampleTableSearch">
                     <thead>
                         <tr>
+                            <th class="table-checkbox">
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes" />
+                                    <span></span>
+                                </label>
+                            </th>
                             <th>姓名</th>
                             <th>地址</th>
                             <th>部門</th>
@@ -441,8 +520,9 @@
                             <th>薪資</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
+                            <th class="no-sort"></th>
                             <th>姓名</th>
                             <th>地址</th>
                             <th>部門</th>
@@ -450,9 +530,12 @@
                             <th>報到日期</th>
                             <th>薪資</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                     <tbody>
                         <tr>
+                            <td>
+                                
+                            </td>
                             <td>Kate</td>
                             <td>5516 Adolfo Rode</td>
                             <td>Littelhaven</td>
@@ -461,6 +544,9 @@
                             <td>$635,852</td>
                         </tr>
                         <tr>
+                            <td>
+                                
+                            </td>
                             <td>Torrey</td>
                             <td>3658 Richie Street</td>
                             <td>West Sedrickstad</td>
@@ -469,6 +555,7 @@
                             <td>$243,577</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Jolin</td>
                             <td>39 Hirthe Squares</td>
                             <td>Ryleetown</td>
@@ -477,6 +564,7 @@
                             <td>$784,802</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Wilhelmine</td>
                             <td>054 O&#x27;Hara Union</td>
                             <td>Dibbertfurt</td>
@@ -485,6 +573,7 @@
                             <td>$254,987</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Hubeen</td>
                             <td>8884 Jamel Pines</td>
                             <td>Howemouth</td>
@@ -493,6 +582,7 @@
                             <td>$584,032</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Gerhold</td>
                             <td>098 Noel Way</td>
                             <td>Santinoland</td>
@@ -501,6 +591,7 @@
                             <td>$145,088</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Chester</td>
                             <td>14095 Kling Gateway</td>
                             <td>Andresmouth</td>
@@ -509,6 +600,7 @@
                             <td>$177,404</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Melany</td>
                             <td>1100 Steve Pines</td>
                             <td>Immanuelfort</td>
@@ -517,6 +609,7 @@
                             <td>$162,453</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Thea</td>
                             <td>26114 Narciso Lodge</td>
                             <td>East Opal</td>
@@ -525,6 +618,7 @@
                             <td>$581,736</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Kreiger</td>
                             <td>111 Hershel Stream</td>
                             <td>Hermannborough</td>
@@ -533,6 +627,7 @@
                             <td>$921,021</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Shanel</td>
                             <td>7579 Santa Forest</td>
                             <td>Jordaneville</td>
@@ -541,6 +636,7 @@
                             <td>$818,20</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Mueller</td>
                             <td>083 Kshlerin Forest</td>
                             <td>Clintmouth</td>
@@ -549,6 +645,7 @@
                             <td>$571,46</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Clementina</td>
                             <td>5957 Hagenes Falls</td>
                             <td>Anaishaven</td>
@@ -557,6 +654,7 @@
                             <td>$684,588</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Johanna</td>
                             <td>4301 Trever Radial</td>
                             <td>Lake Augustineton</td>
@@ -565,6 +663,7 @@
                             <td>$608,507</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Elliottr</td>
                             <td>8417 Orion Parkway</td>
                             <td>Streichside</td>
@@ -573,6 +672,7 @@
                             <td>$447,592</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Yasmine</td>
                             <td>67284 Kreiger Freeway</td>
                             <td>Stoltenbergside</td>
@@ -581,6 +681,7 @@
                             <td>$358,369</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>AdaHoppe</td>
                             <td>69842 Peyton Viaduct</td>
                             <td>South Geovannyburgh</td>
@@ -589,6 +690,7 @@
                             <td>$211,76</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Sammie</td>
                             <td>46406 Powlowski Common</td>
                             <td>Cristmouth</td>
@@ -597,6 +699,7 @@
                             <td>$345,739</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Terrance</td>
                             <td>1568 Richmond Bypass</td>
                             <td>Schillerfort</td>
@@ -605,6 +708,7 @@
                             <td>$634,073</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>August</td>
                             <td>731 Stiedemann Crossing</td>
                             <td>Rolfsonborough</td>
@@ -613,6 +717,7 @@
                             <td>$203,952</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Mckenna</td>
                             <td>63204 Hegmann Keys</td>
                             <td>New Isobelview</td>
@@ -621,6 +726,7 @@
                             <td>$702,091</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Adrianna</td>
                             <td>75151 Kshlerin Square</td>
                             <td>North Elwynfurt</td>
@@ -629,6 +735,7 @@
                             <td>$481,980</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Heath</td>
                             <td>6778 Howe Route</td>
                             <td>Antwanbury</td>
@@ -637,6 +744,7 @@
                             <td>$569,723</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Alisa</td>
                             <td>64838 D&#x27;Amore Cove</td>
                             <td>Port Lempi</td>
@@ -645,6 +753,7 @@
                             <td>$226,459</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Treva</td>
                             <td>308 Octavia Roads</td>
                             <td>East Eunaton</td>
@@ -653,6 +762,7 @@
                             <td>$746,921</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Nicolas</td>
                             <td>760 Hickle Causeway</td>
                             <td>Lake Nickolasshire</td>
@@ -661,6 +771,7 @@
                             <td>$293,786</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Gerhard</td>
                             <td>893 Mara Parkway</td>
                             <td>Elmermouth</td>
@@ -669,6 +780,7 @@
                             <td>$856,275</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Monica</td>
                             <td>0039 Heath Plain</td>
                             <td>West Bentonhaven</td>
@@ -677,6 +789,7 @@
                             <td>$821,600</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Lacey</td>
                             <td>995 Lang Springs</td>
                             <td>Cordellburgh</td>
@@ -685,6 +798,7 @@
                             <td>$990,291</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Bret</td>
                             <td>282 Susana Heights</td>
                             <td>Kaneport</td>
@@ -693,6 +807,7 @@
                             <td>$445,494</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Jennie</td>
                             <td>755 Greyson Key</td>
                             <td>East Jazmyne</td>
@@ -701,6 +816,7 @@
                             <td>$530,408</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Emerson</td>
                             <td>784 Adriel Radial</td>
                             <td>New Jerroldland</td>
@@ -709,6 +825,7 @@
                             <td>$805,823</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Herta</td>
                             <td>7491 Bednar Gardens</td>
                             <td>Port Lucianoton</td>
@@ -717,6 +834,7 @@
                             <td>$352,269</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Deckow</td>
                             <td>6440 Moen Loop</td>
                             <td>Jenningsbury</td>
@@ -725,6 +843,7 @@
                             <td>$219,573</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Davin</td>
                             <td>50922 Kiara Square</td>
                             <td>Port Edmund</td>
@@ -733,6 +852,7 @@
                             <td>$241,432</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Johnathan</td>
                             <td>1998 Webster Fords</td>
                             <td>East Vern</td>
@@ -741,6 +861,7 @@
                             <td>$290,875</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Gunnar</td>
                             <td>92873 Barney Club</td>
                             <td>Beierview</td>
@@ -749,6 +870,7 @@
                             <td>$569,778</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Raina</td>
                             <td>828 Cathy Streets</td>
                             <td>West Uriahville</td>
@@ -757,6 +879,7 @@
                             <td>$186,229</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Marjorie</td>
                             <td>314 Aurore Canyon</td>
                             <td>Port Jaquelineburgh</td>
@@ -765,6 +888,7 @@
                             <td>$547,752</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Citlalli</td>
                             <td>139 Ebert Freeway</td>
                             <td>Lake Esperanzamouth</td>
@@ -773,6 +897,7 @@
                             <td>$892,012</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Ruben</td>
                             <td>02868 Cronin Tunnel</td>
                             <td>Rossieville</td>
@@ -781,6 +906,7 @@
                             <td>$520,483</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Jakubowski</td>
                             <td>80391 Maxwell Parks</td>
                             <td>South Travon</td>
@@ -789,6 +915,7 @@
                             <td>$272,005</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Josephine</td>
                             <td>36238 Satterfield Avenue</td>
                             <td>New Alexanderhaven</td>
@@ -797,6 +924,7 @@
                             <td>$189,18</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Ceasar</td>
                             <td>2795 Clement Ridges</td>
                             <td>Beckerhaven</td>
@@ -805,6 +933,7 @@
                             <td>$958,117</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Coby</td>
                             <td>53700 Pagac Lodge</td>
                             <td>South Hershel</td>
@@ -813,6 +942,7 @@
                             <td>$481,619</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Colin</td>
                             <td>637 Paucek Mountain</td>
                             <td>West Luraberg</td>
@@ -821,6 +951,7 @@
                             <td>$298,110</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Monique</td>
                             <td>415 Corkery Walks</td>
                             <td>West Lauryn</td>
@@ -829,6 +960,7 @@
                             <td>$222,343</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Simonis</td>
                             <td>0778 Elvis Spurs</td>
                             <td>Harrisfurt</td>
@@ -837,6 +969,7 @@
                             <td>$336,046</td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>Afton</td>
                             <td>57724 Ernser Crossroad</td>
                             <td>Lake Charity</td>
@@ -875,7 +1008,21 @@
     <script src="global/vendor/screenfull/screenfull.js"></script>
     <script src="global/vendor/slidepanel/jquery-slidePanel.js"></script>
 
-        <!-- //dataTables -->
+        <!-- fileupload -->
+        <script src="global/vendor/jquery-ui/jquery-ui.js"></script>
+        <script src="global/vendor/blueimp-tmpl/tmpl.js"></script>
+        <script src="global/vendor/blueimp-canvas-to-blob/canvas-to-blob.js"></script>
+        <script src="global/vendor/blueimp-load-image/load-image.all.min.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-process.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-image.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-audio.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-video.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-validate.js"></script>
+        <script src="global/vendor/blueimp-file-upload/jquery.fileupload-ui.js"></script>
+        <script src="global/vendor/dropify/dropify.min.js"></script>
+
+        <!-- dataTables -->
         <script src="global/vendor/datatables.net/jquery.dataTables.js"></script>
         <script src="global/vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
         <script src="global/vendor/datatables.net-fixedheader/dataTables.fixedHeader.js"></script>
@@ -901,6 +1048,9 @@
 
         <!-- bootstrap-select -->
         <script src="global/vendor/bootstrap-select/bootstrap-select.js"></script>
+
+        <!-- toastr -->
+        <script src="global/vendor/toastr/toastr.js"></script>
         
     
     <!-- Scripts -->
@@ -934,6 +1084,12 @@
         <script src="global/js/Plugin/datatables.js"></script>        
         <script src="base/assets/setting/js/tables/datatable.js"></script>
 
+        <!-- fileupload -->
+        <script src="global/js/Plugin/dropify.js"></script>
+        <script src="base/assets/setting/js/forms/uploads.js"></script>
+
+        <script src="global/js/Plugin/toastr.js"></script>
+        
         
   </body>
 </html>
