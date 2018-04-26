@@ -22,9 +22,7 @@
     <link rel="stylesheet" href="global/vendor/animsition/animsition.css">
     <link rel="stylesheet" href="global/vendor/asscrollable/asScrollable.css">
     <link rel="stylesheet" href="global/vendor/switchery/switchery.css">
-    <link rel="stylesheet" href="global/vendor/intro-js/introjs.css">
-    <link rel="stylesheet" href="global/vendor/slidepanel/slidePanel.css">
-    <link rel="stylesheet" href="global/vendor/flag-icon-css/flag-icon.css">
+    
         <!-- dataTables -->
         <link rel="stylesheet" href="global/plugins/datatables/datatables.min.css">
         <link rel="stylesheet" href="global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css">
@@ -40,13 +38,15 @@
         <!-- datepicker layouts -->
         <link rel="stylesheet" href="global/vendor/bootstrap-datepicker/bootstrap-datepicker.css">
 
+        <!-- bootstrap-select -->
         <link rel="stylesheet" href="global/vendor/bootstrap-select/bootstrap-select.css">
 
         <!-- toastr -->
         <link rel="stylesheet" href="global/vendor/toastr/toastr.css">
     
     
-    <!-- Fonts --><link rel="stylesheet" href="global/fonts/font-awesome/font-awesome.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="global/fonts/font-awesome/font-awesome.css">
     <link rel="stylesheet" href="global/fonts/web-icons/web-icons.min.css">
     <link rel="stylesheet" href="global/fonts/brand-icons/brand-icons.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
@@ -290,199 +290,197 @@
                 <h3 class="panel-title">PF 醫師查詢</h3>
             </header>
             <div class="panel-body container-fluid">
+                <form class="form-horizontal">
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
                         <!-- Example Horizontal Form -->
                         <div class="example">
-                            <form>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">醫師中文姓名: </label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="name" placeholder="姓名" autocomplete="off" />
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">醫師中文姓名: </label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="name" placeholder="姓名" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">性別: </label>
+                                <div class="col-md-9">
+                                    <div class="radio-custom radio-primary radio-inline">
+                                        <input type="radio" id="inputHorizontalMale" name="inputRadiosMale2" />
+                                        <label for="inputHorizontalMale">男</label>
+                                    </div>
+                                    <div class="radio-custom radio-primary radio-inline">
+                                        <input type="radio" id="inputHorizontalFemale" name="inputRadiosMale2" />
+                                        <label for="inputHorizontalFemale">女</label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">性別: </label>
-                                    <div class="col-md-9">
-                                        <div class="radio-custom radio-primary radio-inline">
-                                            <input type="radio" id="inputHorizontalMale" name="inputRadiosMale2" />
-                                            <label for="inputHorizontalMale">男</label>
-                                        </div>
-                                        <div class="radio-custom radio-primary radio-inline">
-                                            <input type="radio" id="inputHorizontalFemale" name="inputRadiosMale2" />
-                                            <label for="inputHorizontalFemale">女</label>
-                                        </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">所屬組織科別代號: </label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="start" />
+                                        <span class="input-group-addon bg-teal-costomer">到</span>
+                                        <input type="text" class="form-control" name="end" />
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">所屬組織科別代號: </label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="start" />
-                                            <span class="input-group-addon bg-teal-costomer">到</span>
-                                            <input type="text" class="form-control" name="end" />
-                                        </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">到職日: </label>
+                                <div class="col-md-9 input-daterange" data-plugin="datepicker">
+                                    <div class="input-group">
+                                        <span class="input-group-addon bg-teal-costomer">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" name="start" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon bg-teal-costomer">到</span>
+                                        <input type="text" class="form-control" name="end" />
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">到職日: </label>
-                                    <div class="col-md-9 input-daterange" data-plugin="datepicker">
-                                        <div class="input-group">
-                                            <span class="input-group-addon bg-teal-costomer">
-                                                <i class="icon wb-calendar" aria-hidden="true"></i>
-                                            </span>
-                                            <input type="text" class="form-control" name="start" />
-                                        </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon bg-teal-costomer">到</span>
-                                            <input type="text" class="form-control" name="end" />
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">檔案上傳: </label>
+                                <div class="col-md-9">
+                                    <input type="file" id="input-file-now" data-plugin="dropify" data-default-file="" />
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">檔案上傳: </label>
-                                    <div class="col-md-9">
-                                        <input type="file" id="input-file-now" data-plugin="dropify" data-default-file="" />
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">備註: </label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" placeholder=""></textarea>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">備註: </label>
-                                    <div class="col-md-9">
-                                        <textarea class="form-control" placeholder=""></textarea>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                         <!-- End Example Horizontal Form -->
                     </div>
 
                     <div class="col-md-12 col-lg-6">
                         <!-- Example Horizontal Form -->
-                        <div class="example">
-                            <form class="form-horizontal">
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">醫師英文文姓名: </label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="name" placeholder="姓名" autocomplete="off" />
+                        <div class="example">                            
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">醫師英文文姓名: </label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="name" placeholder="姓名" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">複選項目: </label>
+                                <div class="col-md-9">
+                                    <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                        <input type="checkbox" id="checked-1">
+                                        <label for="checked-1">項目1</label>
+                                    </div>
+                                    <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                        <input type="checkbox" id="checked-2">
+                                        <label for="checked-2">項目2</label>
+                                    </div>
+                                    <div class="checkbox-custom checkbox-primary checkbox-inline">
+                                        <input type="checkbox" id="checked-3">
+                                        <label for="checked-3">項目3</label>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">複選項目: </label>
-                                    <div class="col-md-9">
-                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
-                                            <input type="checkbox" id="checked-1">
-                                            <label for="checked-1">項目1</label>
-                                        </div>
-                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
-                                            <input type="checkbox" id="checked-2">
-                                            <label for="checked-2">項目2</label>
-                                        </div>
-                                        <div class="checkbox-custom checkbox-primary checkbox-inline">
-                                            <input type="checkbox" id="checked-3">
-                                            <label for="checked-3">項目3</label>
-                                        </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">Email: </label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" name="email" placeholder="@email.com" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">醫師員工代號: </label>
+                                <div class="col-md-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="start" />
+                                        <span class="input-group-addon bg-teal-costomer">到</span>
+                                        <input type="text" class="form-control" name="end" />
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Email: </label>
-                                    <div class="col-md-9">
-                                        <input type="email" class="form-control" name="email" placeholder="@email.com" autocomplete="off" />
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">離職日: </label>
+                                <div class="col-md-9 input-daterange" data-plugin="datepicker">
+                                    <div class="input-group">
+                                        <span class="input-group-addon bg-teal-costomer">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" name="start" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon bg-teal-costomer">到</span>
+                                        <input type="text" class="form-control" name="end" />
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">醫師員工代號: </label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="start" />
-                                            <span class="input-group-addon bg-teal-costomer">到</span>
-                                            <input type="text" class="form-control" name="end" />
-                                        </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">下拉選單: </label>
+                                <div class="col-md-9">
+                                    <select class="show-tick" data-plugin="selectpicker">
+                                        <option>Mustard</option>
+                                        <option>Ketchup</option>
+                                        <option>Relish</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">欄位錯誤顯示: </label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control is-invalid" name="email" placeholder="@email.com" autocomplete="off" />
+                                    <div class="invalid-feedback">
+                                        錯誤訊息提示...
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">離職日: </label>
-                                    <div class="col-md-9 input-daterange" data-plugin="datepicker">
-                                        <div class="input-group">
-                                            <span class="input-group-addon bg-teal-costomer">
-                                                <i class="icon wb-calendar" aria-hidden="true"></i>
-                                            </span>
-                                            <input type="text" class="form-control" name="start" />
-                                        </div>
-                                        <div class="input-group">
-                                            <span class="input-group-addon bg-teal-costomer">到</span>
-                                            <input type="text" class="form-control" name="end" />
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">訊息提示: </label>
+                                <div class="col-md-9">
+                                    <a class="btn btn-info" id="exampleTopCenter" data-plugin="toastr" data-type="info" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">訊息</a>
+                                    <a class="btn btn-success" id="exampleTopCenter" data-plugin="toastr" data-type="success" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                        成功</a>
+                                    <a class="btn btn-danger" id="exampleTopCenter" data-plugin="toastr" data-type="error" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                        錯誤</a>
+                                    <a class="btn btn-warning" id="exampleTopCenter" data-plugin="toastr" data-type="warning" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
+                                        警告</a>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">下拉選單: </label>
-                                    <div class="col-md-9">
-                                        <select class="show-tick" data-plugin="selectpicker">
-                                            <option>Mustard</option>
-                                            <option>Ketchup</option>
-                                            <option>Relish</option>
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-3 col-form-label">POP Modal: </label>
+                                <div class="col-md-9">
+                                    <button type="button" class="btn btn-raised btn-primary" data-target="#exampleModalPrimary" data-toggle="modal">Pop 訊息視窗</button>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">欄位錯誤顯示: </label>
-                                    <div class="col-md-9">
-                                        <input type="email" class="form-control is-invalid" name="email" placeholder="@email.com" autocomplete="off" />
-                                        <div class="invalid-feedback">
-                                            錯誤訊息提示...
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">訊息提示: </label>
-                                    <div class="col-md-9">
-                                        <a class="btn btn-info" id="exampleTopCenter" data-plugin="toastr" data-type="info" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">訊息</a>
-                                        <a class="btn btn-success" id="exampleTopCenter" data-plugin="toastr" data-type="success" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
-                                            成功</a>
-                                        <a class="btn btn-danger" id="exampleTopCenter" data-plugin="toastr" data-type="error" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
-                                            錯誤</a>
-                                        <a class="btn btn-warning" id="exampleTopCenter" data-plugin="toastr" data-type="warning" data-close-button="true" data-message="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                            data-container-id="toast-top-center" data-position-class="toast-top-center" href="javascript:void(0)" role="button">
-                                            警告</a>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">POP Modal: </label>
-                                    <div class="col-md-9">
-                                        <button type="button" class="btn btn-raised btn-primary" data-target="#exampleModalPrimary" data-toggle="modal">Pop 訊息視窗</button>
-                                    </div>
 
-                                    <!-- Modal -->
-                                    <div class="modal fade modal-primary" id="exampleModalPrimary" aria-hidden="true" aria-labelledby="exampleModalPrimary" role="dialog"
-                                        tabindex="-1">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                    <h4 class="modal-title">Pop 訊息視窗</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <p>One fine body…</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                    <button type="button" class="btn btn-primary">確認</button>
-                                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade modal-primary" id="exampleModalPrimary" aria-hidden="true" aria-labelledby="exampleModalPrimary" role="dialog"
+                                    tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                                <h4 class="modal-title">Pop 訊息視窗</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>One fine body…</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                <button type="button" class="btn btn-primary">確認</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Modal -->
                                 </div>
-                            </form>
+                                <!-- End Modal -->
+                            </div>
                         </div>
                         <!-- End Example Horizontal Form -->
                     </div>
                 </div>
+                </form>
             </div>
             <footer class="panel-footer">
                 <button type="button" class="btn btn-primary">查詢</button>
@@ -704,7 +702,8 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="site-footer-right"></div>
+        <div class="site-footer-legal"></div>
+        <div class="site-footer-right"></div>
     </footer>
     <!-- Core  -->
     <script src="global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
@@ -719,9 +718,7 @@
     
     <!-- Plugins -->
     <script src="global/vendor/switchery/switchery.js"></script>
-    <script src="global/vendor/intro-js/intro.js"></script>
     <script src="global/vendor/screenfull/screenfull.js"></script>
-    <script src="global/vendor/slidepanel/jquery-slidePanel.js"></script>
 
         <!-- fileupload -->
         <script src="global/vendor/jquery-ui/jquery-ui.js"></script>
@@ -766,15 +763,12 @@
     <script src="base/assets/js/Section/Sidebar.js"></script>
     <script src="base/assets/js/Section/PageAside.js"></script>
     <script src="base/assets/js/Plugin/menu.js"></script>
-    
-    <script src="global/js/config/colors.js"></script>
-    <script src="base/assets/js/config/tour.js"></script>
+
     <script>Config.set('assets', 'base/assets');</script>
     
     <!-- Page -->
     <script src="base/assets/js/Site.js"></script>
     <script src="global/js/Plugin/asscrollable.js"></script>
-    <script src="global/js/Plugin/slidepanel.js"></script>
     <script src="global/js/Plugin/switchery.js"></script>
         <!-- Form layouts -->
         <script src="global/js/Plugin/jquery-placeholder.js"></script>
