@@ -30,82 +30,82 @@
 
   // Example inline datepicker
   // ---------------------
-  (function () {
-    // Reset Current
-    (0, _jquery2.default)('#inlineDatepicker').datepicker();
-    (0, _jquery2.default)("#inlineDatepicker").on("changeDate", function (event) {
-      (0, _jquery2.default)("#inputHiddenInline").val((0, _jquery2.default)("#inlineDatepicker").datepicker('getFormattedDate'));
-    });
-  })();
+  // (function () {
+  //   // Reset Current
+  //   (0, _jquery2.default)('#inlineDatepicker').datepicker();
+  //   (0, _jquery2.default)("#inlineDatepicker").on("changeDate", function (event) {
+  //     (0, _jquery2.default)("#inputHiddenInline").val((0, _jquery2.default)("#inlineDatepicker").datepicker('getFormattedDate'));
+  //   });
+  // })();
 
   // Example Tokenfield With Typeahead
   // ---------------------------------
-  (function () {
-    var engine = new Bloodhound({
-      local: [{
-        value: 'red'
-      }, {
-        value: 'blue'
-      }, {
-        value: 'green'
-      }, {
-        value: 'yellow'
-      }, {
-        value: 'violet'
-      }, {
-        value: 'brown'
-      }, {
-        value: 'purple'
-      }, {
-        value: 'black'
-      }, {
-        value: 'white'
-      }],
-      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-      queryTokenizer: Bloodhound.tokenizers.whitespace
-    });
+  // (function () {
+  //   var engine = new Bloodhound({
+  //     local: [{
+  //       value: 'red'
+  //     }, {
+  //       value: 'blue'
+  //     }, {
+  //       value: 'green'
+  //     }, {
+  //       value: 'yellow'
+  //     }, {
+  //       value: 'violet'
+  //     }, {
+  //       value: 'brown'
+  //     }, {
+  //       value: 'purple'
+  //     }, {
+  //       value: 'black'
+  //     }, {
+  //       value: 'white'
+  //     }],
+  //     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  //     queryTokenizer: Bloodhound.tokenizers.whitespace
+  //   });
 
-    // engine.initialize();
+  //   // engine.initialize();
 
-    (0, _jquery2.default)('#inputTokenfieldTypeahead').tokenfield({
-      typeahead: [null, {
-        name: 'engine',
-        displayKey: 'value',
-        source: engine.ttAdapter()
-      }]
-    });
-  })();
+  //   (0, _jquery2.default)('#inputTokenfieldTypeahead').tokenfield({
+  //     typeahead: [null, {
+  //       name: 'engine',
+  //       displayKey: 'value',
+  //       source: engine.ttAdapter()
+  //     }]
+  //   });
+  // })();
 
   // Example Tokenfield Events
   // -------------------------
-  (function () {
-    (0, _jquery2.default)('#inputTokenfieldEvents').on('tokenfield:createtoken', function (e) {
-      var data = e.attrs.value.split('|');
-      e.attrs.value = data[1] || data[0];
-      e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0];
-    }).on('tokenfield:createdtoken', function (e) {
-      // Über-simplistic e-mail validation
-      var re = /\S+@\S+\.\S+/;
-      var valid = re.test(e.attrs.value);
-      if (!valid) {
-        (0, _jquery2.default)(e.relatedTarget).addClass('invalid');
-      }
-    }).on('tokenfield:edittoken', function (e) {
-      if (e.attrs.label !== e.attrs.value) {
-        var label = e.attrs.label.split(' (');
-        e.attrs.value = label[0] + '|' + e.attrs.value;
-      }
-    }).on('tokenfield:removedtoken', function (e) {
-      if (e.attrs.length > 1) {
-        var values = _jquery2.default.map(e.attrs, function (attrs) {
-          return attrs.value;
-        });
-        alert(e.attrs.length + ' tokens removed! Token values were: ' + values.join(', '));
-      } else {
-        alert('Token removed! Token value was: ' + e.attrs.value);
-      }
-    }).tokenfield();
-  })();
+  // (function () {
+  //   (0, _jquery2.default)('#inputTokenfieldEvents').on('tokenfield:createtoken', function (e) {
+  //     var data = e.attrs.value.split('|');
+  //     e.attrs.value = data[1] || data[0];
+  //     e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0];
+  //   }).on('tokenfield:createdtoken', function (e) {
+  //     // Über-simplistic e-mail validation
+  //     var re = /\S+@\S+\.\S+/;
+  //     var valid = re.test(e.attrs.value);
+  //     if (!valid) {
+  //       (0, _jquery2.default)(e.relatedTarget).addClass('invalid');
+  //     }
+  //   }).on('tokenfield:edittoken', function (e) {
+  //     if (e.attrs.label !== e.attrs.value) {
+  //       var label = e.attrs.label.split(' (');
+  //       e.attrs.value = label[0] + '|' + e.attrs.value;
+  //     }
+  //   }).on('tokenfield:removedtoken', function (e) {
+  //     if (e.attrs.length > 1) {
+  //       var values = _jquery2.default.map(e.attrs, function (attrs) {
+  //         return attrs.value;
+  //       });
+  //       alert(e.attrs.length + ' tokens removed! Token values were: ' + values.join(', '));
+  //     } else {
+  //       alert('Token removed! Token value was: ' + e.attrs.value);
+  //     }
+  //   }).tokenfield();
+  // })();
 
   // Example Tags Input Objects as tags
   // ----------------------------------

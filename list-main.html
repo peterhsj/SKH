@@ -52,6 +52,7 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
 
     <style>
+       
     </style>
     
     <!--[if lt IE 9]>
@@ -287,13 +288,12 @@
         <!-- Query -->
         <div class="panel panel-bordered">
             <header class="panel-heading">
-                <h3 class="panel-title">PF 醫師查詢</h3>
+                <h3 class="panel-title"><a href="#datafilter" data-toggle="collapse">PF 醫師查詢</a></h3>
             </header>
-            <div class="panel-body container-fluid">
+            <div id="datafilter" class="panel-body container-fluid collapse show">
                 <form class="form-horizontal">
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
-                        <!-- Example Horizontal Form -->
                         <div class="example">
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">醫師中文姓名: </label>
@@ -352,11 +352,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Example Horizontal Form -->
                     </div>
 
                     <div class="col-md-12 col-lg-6">
-                        <!-- Example Horizontal Form -->
                         <div class="example">                            
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label">醫師英文文姓名: </label>
@@ -477,7 +475,6 @@
                                 <!-- End Modal -->
                             </div>
                         </div>
-                        <!-- End Example Horizontal Form -->
                     </div>
                 </div>
                 </form>
@@ -703,7 +700,12 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="site-footer-legal"></div>
-        <div class="site-footer-right"></div>
+        <div class="site-footer-right">
+            <div class="scroll-to-top">
+                <i class="icon fa-arrow-circle-o-up"></i>
+            </div>
+        </div>
+        
     </footer>
     <!-- Core  -->
     <script src="global/vendor/babel-external-helpers/babel-external-helpers.js"></script>
