@@ -209,6 +209,7 @@ li.nav-item.item-title {
   }
 
   .site-navbar.navbar .navbar-collapse {
+    background: url(../../../base/assets/images/header.jpg) top right no-repeat;
     -ms-flex: 1 1 100%;
     flex: 1 1 100%;
   }
