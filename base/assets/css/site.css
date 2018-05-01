@@ -1510,6 +1510,9 @@ body.site-gridmenu-active {
 
 .site-footer .scroll-to-top, .site-footer .scroll-to-top:hover, .site-footer .scroll-to-top:active {
   text-decoration: none;
+  position: fixed;
+  right: 20px;
+  bottom: 5px;
 }
 
 @media (max-width: 479px) {
@@ -2387,7 +2390,7 @@ body.site-gridmenu-active {
     min-width: 260px;
   }
 
-  .site-menubar-unfold .site-navbar .navbar-container {
+  .site-navbar .navbar-container {
     background: url('../../../base/assets/images/header.jpg') top right no-repeat;
     margin-left: 0;
   }
