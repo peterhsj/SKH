@@ -6,7 +6,7 @@
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Microsoft JhengHei";
 }
 
 label {
@@ -185,7 +185,7 @@ li.nav-item.item-title {
 } */
 
 .site-navbar .navbar-header .navbar-brand {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Microsoft JhengHei";
   color: #fff;
   cursor: pointer;
   padding-left: 1rem;
@@ -224,7 +224,7 @@ li.nav-item.item-title {
 }
 
 html, body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Microsoft JhengHei";
   height: 100%;
 }
 
@@ -238,7 +238,7 @@ body {
   z-index: 1400;
   height: 100%;
   height: calc(100% - 66.01px);
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif, "Microsoft JhengHei";
   color: rgba(163, 175, 183, .9);
   background: #4a7ab8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
